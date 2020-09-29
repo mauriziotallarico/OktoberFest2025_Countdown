@@ -1,9 +1,9 @@
-const days = document.getElementById('giorni');
-const hours = document.getElementById('ore');
-const minutes = document.getElementById('minuti');
-const seconds = document.getElementById('secondi');
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
 const countdown = document.getElementById('countdown');
-const year = document.getElementById('anno');
+const year = document.getElementById('year');
 const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
