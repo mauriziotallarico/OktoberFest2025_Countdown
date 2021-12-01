@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
 
 year.innerText = currentYear + 1;
 
-const newYearTime = new Date(`June 30 ${currentYear} 00:00:00`);
+const newYearTime = new Date(`June 30 ${currentYear+1} 00:00:00`);
 
 console.log(currentYear, newYearTime);
 
