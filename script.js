@@ -10,6 +10,7 @@ const seconds10 = document.getElementById('seconds');
 
 
 const countdown = document.getElementById('countdown');
+const countdown10 = document.getElementById('countdown10');
 const year = document.getElementById('year');
 const loading = document.getElementById('loading');
 
@@ -56,6 +57,7 @@ function updateCountDown(){
 setTimeout(() => {
     loading.remove();
     countdown.style.display = 'flex';
+    countdown10.style.display = 'flex';
 }, 1000);
 
 // Run every second
