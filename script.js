@@ -28,7 +28,7 @@ function updateCountDown(){
     const currentYear = new Date();
 
     const diff = newYearTime - currentYear;
-    const diff10 = newYearTime10 - currentYear;
+  
     
     const d = Math.floor(diff / 1000 / 60 / 60 / 24);
     const h = Math.floor(diff / 1000 / 60 / 60) % 24;
@@ -40,6 +40,13 @@ function updateCountDown(){
     hours.innerHTML = h < 10 ? '0' + h : h;
     minutes.innerHTML = m < 10 ? '0' + m : m;
     seconds.innerHTML = s < 10 ? '0' + s : s;
+    
+}
+
+unction updateCountDown10(){
+    const currentYear = new Date();
+
+    const diff10 = newYearTime10 - currentYear;
     
     const d10 = Math.floor(diff10 / 1000 / 60 / 60 / 24);
     const h10 = Math.floor(diff10 / 1000 / 60 / 60) % 24;
@@ -63,3 +70,4 @@ setTimeout(() => {
 
 // Run every second
 setInterval(updateCountDown, 1000);
+setInterval(updateCountDown10, 1000);
