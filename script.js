@@ -16,7 +16,7 @@ const loading = document.getElementById('loading');
 
 const currentYear = new Date().getFullYear();
 
-year.innerText = currentYear + 1;
+year.innerText = currentYear;
 
 const newYearTime = new Date(`June 30 ${currentYear} 00:00:00`);
 const newYearTime10 = new Date(`June 10 ${currentYear} 00:00:00`);
