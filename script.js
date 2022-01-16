@@ -39,16 +39,16 @@ function updateCountDown(){
     minutes.innerHTML = m < 10 ? '0' + m : m;
     seconds.innerHTML = s < 10 ? '0' + s : s;
     
-    const d = Math.floor(diff10 / 1000 / 60 / 60 / 24);
-    const h = Math.floor(diff10 / 1000 / 60 / 60) % 24;
-    const m = Math.floor(diff10 / 1000 / 60) % 60;
-    const s = Math.floor(diff10 / 1000) % 60;
+    const d10 = Math.floor(diff10 / 1000 / 60 / 60 / 24);
+    const h10 = Math.floor(diff10 / 1000 / 60 / 60) % 24;
+    const m10 = Math.floor(diff10 / 1000 / 60) % 60;
+    const s10 = Math.floor(diff10 / 1000) % 60;
     
     // Add values to DOM
-    days10.innerHTML = d;
-    hours10.innerHTML = h < 10 ? '0' + h : h;
-    minutes10.innerHTML = m < 10 ? '0' + m : m;
-    seconds10.innerHTML = s < 10 ? '0' + s : s;
+    days10.innerHTML = d10;
+    hours10.innerHTML = h10 < 10 ? '0' + h10 : h10;
+    minutes10.innerHTML = m10 < 10 ? '0' + m10 : m10;
+    seconds10.innerHTML = s10 < 10 ? '0' + s10 : s10;
     
 }
 
