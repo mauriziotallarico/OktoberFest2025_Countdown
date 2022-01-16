@@ -22,6 +22,7 @@ const newYearTime = new Date(`June 30 ${currentYear} 00:00:00`);
 const newYearTime10 = new Date(`June 10 ${currentYear} 00:00:00`);
 
 console.log(currentYear, newYearTime);
+console.log(currentYear, newYearTime10);
 
 function updateCountDown(){
     const currentYear = new Date();
