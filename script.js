@@ -1,28 +1,64 @@
-// Set the date we're counting down to
-var countDownDate = new Date("Jun 10, 2023 08:00:00").getTime();
+const days = document.getElementById('days');
+const hours = document.getElementById('hours');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+const days10 = document.getElementById('days');
+const hours10 = document.getElementById('hours');
+const minutes10 = document.getElementById('minutes');
+const seconds10 = document.getElementById('seconds');
 
-  // Get today's date and time
-  var now = new Date().getTime();
 
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+const countdown = document.getElementById('countdown');
+const countdown10 = document.getElementById('countdown10');
+const year = document.getElementById('year');
+const loading = document.getElementById('loading');
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const currentYear = new Date().getFullYear();
 
-  // Output the result in an element with id="countdown"
-  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+year.innerText = currentYear;
 
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "La scuola è finita!";
-  }
+const newYearTime = new Date(`June 30 ${currentYear} 00:00:00`);
+const newYearTime10 = new Date(`June 10 ${currentYear} 00:00:00`);
+
+console.log(currentYear, newYearTime);
+
+function updateCountDown(){
+    const currentYear = new Date();
+
+    const diff = newYearTime - currentYear;
+    const diff10 = newYearTime10 - currentYear;
+    
+    const d = Math.floor(diff / 1000 / 60 / 60 / 24);
+    const h = Math.floor(diff / 1000 / 60 / 60) % 24;
+    const m = Math.floor(diff / 1000 / 60) % 60;
+    const s = Math.floor(diff / 1000) % 60;
+  
+    // Add values to DOM
+    days.innerHTML = d;
+    hours.innerHTML = h < 10 ? '0' + h : h;
+    minutes.innerHTML = m < 10 ? '0' + m : m;
+    seconds.innerHTML = s < 10 ? '0' + s : s;
+    
+    const d10 = Math.floor(diff10 / 1000 / 60 / 60 / 24);
+    const h10 = Math.floor(diff10 / 1000 / 60 / 60) % 24;
+    const m10 = Math.floor(diff10 / 1000 / 60) % 60;
+    const s10 = Math.floor(diff10 / 1000) % 60;
+    
+    // Add values to DOM
+    days10.innerHTML = d10;
+    hours10.innerHTML = h10 < 10 ? '0' + h10 : h10;
+    minutes10.innerHTML = m10 < 10 ? '0' + m10 : m10;
+    seconds10.innerHTML = s10 < 10 ? '0' + s10 : s10;
+    
+}
+
+//show spinner before countdown
+setTimeout(() => {
+    loading.remove();
+    countdown.style.display = 'flex';
+    countdown10.style.display = 'flex';
 }, 1000);
+
+// Run every second
+setInterval(updateCountDown, 1000);
